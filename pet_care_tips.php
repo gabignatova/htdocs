@@ -6,18 +6,6 @@
 <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                 <style>
-    body {
-      background-image: url("assets/img");
-      background-size: cover; 
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 300px;
-      height: 200px;
-      color: white;
-      padding: 20px;
-    }
-             </style>
                 <div class="masthead-subheading">"Rescue is right, love at first sight."</div>
                 <div class="masthead-heading text-uppercase">Pet care tips</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
@@ -131,6 +119,167 @@
             </div>
         </section>
         <!-- About-->
+         <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Home</h2>
+                                    <p>Bringing a new pet home is exciting, but for your furry friend, it can be confusing or even scary. Before they arrive, prepare a safe and quiet area just for them — complete with food and water bowls, a cozy bed, a litter box (for cats), and some toys. Try to choose a calm room away from high traffic, especially in the beginning. This small "home base" helps them feel secure and gives them a place to retreat if they’re feeling overwhelmed. Avoid introducing too many people or other animals at once. Instead, let your new companion slowly get familiar with the sounds, smells, and rhythm of your home. A peaceful, well-prepared space sets the foundation for a smooth and loving transition.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"> </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Patience</h2>
+                                    <img class="" src="" alt="" />
+                                    <p>Adopting an animal means welcoming a soul with a past. Some pets might adjust quickly, wagging tails and cuddles from day one — but many need time to feel safe and understood. They may be shy, withdrawn, or uncertain. That’s perfectly okay. Give them room to explore at their own pace. Let them approach you when they’re ready. Offer treats gently, sit on the floor to seem less intimidating, and speak softly. Don’t force cuddles or affection — let love happen naturally. Remember, your patience tells them something they may have never known before: that they are safe, accepted, and home.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Routine</h2>
+                                    <img class="img-fluid d-block mx-auto" />
+                                    <p>Animals feel more relaxed and confident when they know what to expect. Establishing a consistent routine — feeding at the same times each day, regular bathroom breaks, walks, and bedtime — helps your new pet adjust and feel secure. For rescue pets especially, structure is soothing. A predictable schedule gives them a sense of control and reduces stress-related behaviors like barking, hiding, or accidents. Be gentle and consistent, and before long, you’ll see your pet settle into the rhythm of your life with joy and comfort.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Health</h2>
+                                    <img class="img-fluid d-block mx-auto" />
+                                    <p>A vet visit in the first week is an important step in your adoption journey. It helps confirm your pet is healthy, gives you a baseline for their medical needs, and allows you to build a trusted relationship with a veterinarian. Ask about vaccinations, microchipping, parasite prevention, diet, and any breed-specific care. If your pet is older or has special needs, talk about long-term care. Regular check-ups will help your pet live a longer, happier life — and give you peace of mind knowing they’re in good hands.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Play</h2>
+                                    <img class="img-fluid d-block mx-auto" />
+                                    <p>Play is how your pet learns, bonds, relieves stress, and stays mentally and physically healthy. It’s more than just fun — it’s essential.
+
+For dogs, play satisfies instincts like chasing, chewing, and exploring. For cats, it simulates the hunt and builds confidence. Beyond keeping them active, it helps reduce boredom, separation anxiety, and even unwanted behaviors like scratching or barking. Whether your pet is shy or social, young or senior, there’s a way to play that will make them feel seen, safe, and happy.
+
+Make time every day for play — even 10 minutes can lift their mood and strengthen your bond.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Training</h2>
+                                    <img class="img-fluid d-block mx-auto" />
+                                    <p>Training isn’t just about teaching rules — it’s about building communication and trust. Use positive reinforcement to reward behaviors you want to see again: treats, toys, praise, or cuddles. Avoid yelling or punishment; fear doesn’t teach, but love and patience do. For dogs, start with basic commands like “sit,” “stay,” and “come.” For cats, training can include litter box habits, scratch post use, and gentle socialization. Keep sessions short, fun, and full of encouragement. And remember: every small step forward is a victory worth celebrating.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
 
 
 

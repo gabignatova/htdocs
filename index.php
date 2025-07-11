@@ -3,12 +3,16 @@
     include 'common/header_end.php';
 ?>  
         <!-- Masthead-->
-        <header class="masthead">
+            <header class="masthead" >
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="container">
                 <div class="masthead-subheading">"Where paws roam, love finds home."</div>
                 <div class="masthead-heading text-uppercase">Paw Locator</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
+  </div>
+</div>
         </header>
         <!-- Services-->
         <section class="page-section" id="services">
