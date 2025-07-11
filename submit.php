@@ -14,9 +14,9 @@ $message = $_POST['message'] ?? '';
 
 // 3. Connect to the database
 $host = 'localhost';
-$dbname = 'tekst_base';
-$user = 'root';
-$pass = '';
+$dbname = 'petstore_dbS';
+$user = 'petstore_u';
+$pass = 'TVsxopBOU9Pm8Op';
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
@@ -55,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Database configuration
 $host = 'localhost';
-$dbname = 'test_base';
-$user = 'root';
-$pass = '';
+$dbname = 'petstore_dbS';
+$user = 'petstore_u';
+$pass = 'TVsxopBOU9Pm8Op';
 
 // Function to send JSON response
 function sendResponse($success, $message, $data = null, $statusCode = 200) {
