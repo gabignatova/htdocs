@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 // Database configuration
 $host = 'localhost';
-$dbname = 'petstore_db';
+$db = 'petstore_db';
 $user = 'petstore_u';
 $pass = 'TVsxopBOU9Pm8Op';
 
