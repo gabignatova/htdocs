@@ -298,7 +298,8 @@ include 'common/header_end.php';
         <!-- To make this form functional, sign up at-->
         <!-- https://startbootstrap.com/solution/contact-forms-->
         <!-- to get an API token!-->
-        <form action="submit.php" method="POST">
+         <div id="response-message" style="display: none;"></div>
+        <form id="contact-form" action="submit.php" method="POST">
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -327,6 +328,25 @@ include 'common/header_end.php';
                     id="" type="submit">Send Message</button>
             </div>
         </form>
+    </div>
+
+    <!-- Contacts List Section -->
+    <div class="contacts-section rounded-4" id="contacts-list">
+        <h2 class="section-title">
+            <i class="bi bi-inbox me-2"></i>Recent Messages
+        </h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="contacts-container">
+                    <div class="loading-spinner">
+                        <div class="spinner-border text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-light mt-2">Loading messages...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- Footer-->
@@ -608,103 +628,103 @@ include 'common/header_end.php';
         </div>
     </div>
 </div>
- <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            // Load existing contacts when page loads
-            loadContacts();
-            
-            // Form submission
-            $('#contact-form').on('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                var formData = {
-                    name: $('#name').val(),
-                    email: $('#email').val(),
-                    message: $('#message').val()
-                };
-                
-                // Disable submit button and show loading
-                $('#submit-btn').prop('disabled', true).html('<i class="bi bi-hourglass-split me-2"></i>Sending...');
-                $('#response-message').hide();
-                
-                // Make AJAX request
-                $.ajax({
-                    url: 'submit.php',
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.success) {
-                            showMessage(response.message, 'success');
-                            // Clear form on success
-                            $('#contact-form')[0].reset();
-                            // Reload contacts to show the new one
-                            loadContacts();
-                        } else {
-                            showMessage(response.message, 'danger');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        var errorMessage = 'An error occurred while submitting the form.';
-                        if (xhr.responseJSON && xhr.responseJSON.message) {
-                            errorMessage = xhr.responseJSON.message;
-                        }
-                        showMessage(errorMessage, 'danger');
-                    },
-                    complete: function() {
-                        // Re-enable submit button
-                        $('#submit-btn').prop('disabled', false).html('<i class="bi bi-send me-2"></i>Send Message');
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Load existing contacts when page loads
+        loadContacts();
+
+        // Form submission
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            var formData = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                message: $('#message').val()
+            };
+
+            // Disable submit button and show loading
+            $('#submit-btn').prop('disabled', true).html('<i class="bi bi-hourglass-split me-2"></i>Sending...');
+            $('#response-message').hide();
+
+            // Make AJAX request
+            $.ajax({
+                url: 'submit.php',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        showMessage(response.message, 'success');
+                        // Clear form on success
+                        $('#contact-form')[0].reset();
+                        // Reload contacts to show the new one
+                        loadContacts();
+                    } else {
+                        showMessage(response.message, 'danger');
                     }
-                });
-            });
-            
-            function showMessage(message, type) {
-                var $responseDiv = $('#response-message');
-                $responseDiv.removeClass().addClass('alert alert-' + type);
-                $responseDiv.html('<i class="bi bi-' + (type === 'success' ? 'check-circle' : 'exclamation-triangle') + ' me-2"></i>' + message).show();
-                
-                // Auto-hide success messages after 5 seconds
-                if (type === 'success') {
-                    setTimeout(function() {
-                        $responseDiv.fadeOut();
-                    }, 5000);
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = 'An error occurred while submitting the form.';
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+                    showMessage(errorMessage, 'danger');
+                },
+                complete: function() {
+                    // Re-enable submit button
+                    $('#submit-btn').prop('disabled', false).html('<i class="bi bi-send me-2"></i>Send Message');
                 }
+            });
+        });
+
+        function showMessage(message, type) {
+            var $responseDiv = $('#response-message');
+            $responseDiv.removeClass().addClass('alert alert-' + type);
+            $responseDiv.html('<i class="bi bi-' + (type === 'success' ? 'check-circle' : 'exclamation-triangle') + ' me-2"></i>' + message).show();
+
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(function() {
+                    $responseDiv.fadeOut();
+                }, 5000);
             }
-            
-            function loadContacts() {
-                $.ajax({
-                    url: 'submit.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.success && response.data) {
-                            displayContacts(response.data);
-                        } else {
-                            showNoContacts();
-                        }
-                    },
-                    error: function() {
+        }
+
+        function loadContacts() {
+            $.ajax({
+                url: 'submit.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success && response.data) {
+                        displayContacts(response.data);
+                    } else {
                         showNoContacts();
                     }
-                });
-            }
-            
-            function displayContacts(contacts) {
-                var $container = $('#contacts-container');
-                
-                if (contacts.length === 0) {
+                },
+                error: function() {
                     showNoContacts();
-                    return;
                 }
-                
-                var html = '';
-                contacts.forEach(function(contact) {
-                    var date = new Date(contact.created_at || Date.now()).toLocaleDateString();
-                    html += `
+            });
+        }
+
+        function displayContacts(contacts) {
+            var $container = $('#contacts-container');
+
+            if (contacts.length === 0) {
+                showNoContacts();
+                return;
+            }
+
+            var html = '';
+            contacts.forEach(function(contact) {
+                var date = new Date(contact.created_at || Date.now()).toLocaleDateString();
+                html += `
                         <div class="contact-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div class="flex-grow-1">
@@ -723,34 +743,36 @@ include 'common/header_end.php';
                             </div>
                         </div>
                     `;
-                });
-                
-                $container.html(html);
-            }
-            
-            function showNoContacts() {
-                $('#contacts-container').html(`
+            });
+
+            $container.html(html);
+        }
+
+        function showNoContacts() {
+            $('#contacts-container').html(`
                     <div class="no-contacts">
                         <i class="bi bi-inbox display-1 text-light opacity-50"></i>
                         <h4 class="text-light mt-3">No messages yet</h4>
                         <p class="text-light opacity-75">Be the first to send us a message!</p>
                     </div>
                 `);
-            }
-            
-            function escapeHtml(text) {
-                var map = {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                };
-                return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-            }
-        });
-    </script>
- 
+        }
+
+        function escapeHtml(text) {
+            var map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) {
+                return map[m];
+            });
+        }
+    });
+</script>
+
 
 <!-- Bootstrap core JS-->
 <?php
