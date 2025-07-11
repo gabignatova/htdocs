@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = 'localhost';
-$dbname = 'petstore_dbS';
+$dbname = 'petstore_db';
 $user = 'petstore_u';
 $pass = 'TVsxopBOU9Pm8Op';
 
