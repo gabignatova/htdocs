@@ -21,3 +21,9 @@ h2.section-heading  {
    
 }
 
+header.masthead {
+    background-image: url("assets/img/page_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    }
+
