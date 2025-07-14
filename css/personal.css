@@ -22,8 +22,16 @@ h2.section-heading  {
 }
 
 header.masthead {
-    background-image: url("assets/img/kuche.jpg");
-    background-size: cover;
-    background-position: center;
+    background-image: url("assets/img/kuche.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    }
+
+    div.masthead-subheading{
+        color: black !important;
+    }
+
+    div.masthead-headingtext-uppercase{
+        color: black !important;
     }
 
